@@ -6,8 +6,14 @@ from kivy.uix.label import Label
 from kivy.uix.scatter import Scatter
 from kivy.uix.textinput import TextInput
 
+import random
+
 class ScatterTextWidget(BoxLayout):
-    pass
+
+    def change_label_colour(self, *args):
+        colour = [random.random() for i in range(3)] + [1]
+        label = self.ids.my_label
+        label.color = colour
 
 class TutorialApp(App):
 
